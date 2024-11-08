@@ -10,16 +10,15 @@
         }
         table {
             margin: auto;
+            text-align: center;
             border-collapse: collapse;
             border-style: double;
         }
         th, td {
             border: 0.5px solid;
             padding: 3px 5px;
-            text-align: center;
         }
         td.height {
-            text-align: center;
             font-weight: bold;
         }
     </style>
@@ -134,7 +133,7 @@
             }
             document.getElementById('result').innerText = numArray.reduce(
                 (acc, current) => acc + current, 0
-            )
+            ).toFixed(2)
         }
         function clearInput() {
             //清空输入的值
