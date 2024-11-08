@@ -2,173 +2,29 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style type="text/css">
-        .section {
-            display: none;
-        }
-
-        .active {
-            display: block;
-        }
-
         body {
             margin: 5%;
+            text-align: center;
         }
 
         a {
             text-decoration: none;
-            line-height: 1.5;
         }
 
-        nav {
-            text-align: center;
+        button {
             font-size: larger;
-            font-weight: bolder;
             line-height: 2;
-        }
-
-        .black_link {
-            color: black;
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <button><a href="./原神圣遗物评分.html" class="black_link">原神圣遗物评分</a></button><br>
-        <button onclick="showSection('Computer')">Computer</button>
-        <button onclick="showSection('JavaScript')">JavaScript</button>
-        <button onclick="showSection('Python')">Python</button>
-    </nav>
-
-    <div id="Computer" class="section">
-        <h2>Computer</h2>
-        <ul>
-            <li><a href="./渲染md.html?param=Computer/硬盘无法弹出问题.md">硬盘无法弹出问题.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/Linux 命令.md">Linux 命令.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/Markdown.md">Markdown.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/Regular expressions.md">Regular expressions.md</a></li>
-        </ul>
-        <ul>
-            <li><a href="./渲染md.html?param=Computer/HTTP.md">HTTP.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/HTML.md">HTML.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/CSS.md">CSS.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/CSS selector.md">CSS selector.md</a></li>
-            <li><a href="./渲染md.html?param=Computer/XPath.md">XPath.md</a></li>
-            <li><a href="javascript:void(0);" onclick="navigateWithParamsMD('Computer/Js 混淆 & 编码 & 加密.md')">Js 混淆 & 编码 &
-                    加密.md</a></li>
-        </ul>
+    <div class="button">
+        <button><a href="./原神圣遗物评分.html">原神圣遗物评分</a></button>
     </div>
-
-    <div id="JavaScript" class="section">
-        <h2>JavaScript</h2>
-        <ul>
-            <li><a href="./显示code.html?param=JavaScript/base syntax.js">base syntax.js</a></li>
-            <li><a href="./显示code.html?param=JavaScript/BOM - other.js">BOM - other.js</a></li>
-            <li><a href="./显示code.html?param=JavaScript/BOM - window.js">BOM - window.js</a></li>
-            <li><a href="./显示code.html?param=JavaScript/console.js">console.js</a></li>
-            <li><a href="./显示code.html?param=JavaScript/html event.js">html event.js</a></li>
-            <li><a href="./渲染md.html?param=JavaScript/JavaScript.md">JavaScript.md</a></li>
-            <li><a href="./显示code.html?param=JavaScript/supplement environment.js">supplement environment.js</a></li>
-            <li><a href="./显示code.html?param=JavaScript/webpack 打包工具.js">webpack 打包工具.js</a></li>
-        </ul>
-    </div>
-
-    <div id="Python" class="section">
-        <h2>Python</h2>
-        <ul>
-            <li><a href="./显示code.html?param=Python/M - rich.py">M - rich.py</a></li>
-            <li><a href="./显示code.html?param=Python/M - asyncio.py">M - asyncio.py</a></li>
-            <li><a href="./显示code.html?param=Python/M - random.py">M - random.py</a></li>
-            <li><a href="./显示code.html?param=Python/Decorator.py">Decorator.py</a></li>
-            <li><a href="./显示code.html?param=Python/M - math.py">M - math.py</a></li>
-        </ul>
-
-        <h3>datatype</h3>
-        <ul>
-            <li><a href="./显示code.html?param=Python/datatype/_general.py">_general.py</a></li>
-            <li><a href="./显示code.html?param=Python/datatype/num.py">num.py</a></li>
-            <li><a href="./显示code.html?param=Python/datatype/string.py">string.py</a></li>
-            <li><a href="./显示code.html?param=Python/datatype/list.py">list.py</a></li>
-            <li><a href="./显示code.html?param=Python/datatype/set.py">set.py</a></li>
-            <li><a href="./显示code.html?param=Python/datatype/dict.py">dict.py</a></li>
-        </ul>
-
-        <h3>date & time</h3>
-        <ul>
-            <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/date & time/M - time.py')">M -
-                    time.py</a></li>
-            <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/date & time/M - datetime.py')">M -
-                    datetime.py</a></li>
-        </ul>
-
-        <h3>file</h3>
-        <ul>
-            <li><a href="./显示code.html?param=Python/file/_file.py">_file.py</a></li>
-            <li><a href="./显示code.html?param=Python/file/M - csv.py">M - csv.py</a></li>
-            <li><a href="./显示code.html?param=Python/file/M - json.py">M - json.py</a></li>
-            <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/file/M - os & shutil.py')">M - os
-                    &
-                    shutil.py</a></li>
-        </ul>
-
-        <h3>html parse</h3>
-        <ul>
-            <li><a href="./显示code.html?param=Python/html parse/M - bs4.py">M - bs4.py</a></li>
-            <li><a href="./显示code.html?param=Python/html parse/M - urllib.py">M - urllib.py</a></li>
-        </ul>
-
-        <h3>html request</h3>
-        <ul>
-            <li><a href="./显示code.html?param=Python/html request/M - requests.py">M - requests.py</a></li>
-            <li><a href="./显示code.html?param=Python/html request/M - aiohttp.py">M - aiohttp.py</a></li>
-        </ul>
-
-        <h3>JsRPC</h3>
-        <ul>
-            <li><a href="./显示code.html?param=Python/JsRPC/1 create env.js">1 create env.js</a></li>
-            <li><a href="./显示code.html?param=Python/JsRPC/2 connect env.js">2 connect env.js</a></li>
-            <li><a href="./显示code.html?param=Python/JsRPC/3 browser.js">3 browser.js</a></li>
-            <li><a href="./显示code.html?param=Python/JsRPC/4 local.py">4 local.py</a></li>
-        </ul>
-
-        <h3>string</h3>
-        <ul>
-            <li><a href="javascript:void(0);"
-                    onclick="navigateWithParamsCode('Python/string/encode & encrypt.py')">encode &
-                    encrypt.py</a></li>
-            <li><a href="./显示code.html?param=Python/string/M - re.py">M - re.py</a></li>
-            <li><a href="./显示code.html?param=Python/string/M - string.py">M - string.py</a></li>
-        </ul>
-
-        <h3>webdriver</h3>
-        <ul>
-            <li><a href="./显示code.html?param=Python/webdriver/M - selenuim.py">M - selenuim.py</a></li>
-            <li><a href="./显示code.html?param=Python/webdriver/stealth.min.js">stealth.min.js</a></li>
-        </ul>
-    </div>
-
-
-    <script>
-        function navigateWithParamsMD(param) {
-            const encodedParam = encodeURIComponent(param);  // 编码参数
-            const url = `./渲染md.html?param=${encodedParam}`;
-            window.location.href = url;  // 导航到目标页面
-        }
-        function navigateWithParamsCode(param) {
-            const encodedParam = encodeURIComponent(param);  // 编码参数
-            const url = `./显示code.html?param=${encodedParam}`;
-            window.location.href = url;  // 导航到目标页面
-        }
-        function showSection(sectionId) {
-            // 隐藏所有内容区
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-
-            // 显示选中的内容区
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
 </body>
 
 </html>
