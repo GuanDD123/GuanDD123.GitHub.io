@@ -1,149 +1,34 @@
 <!DOCTYPE html>
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
-        @media (max-width: 768px) {
-            table {
-                width: 90%;
-            }
-        }
-        table {
-            margin: auto;
-            text-align: center;
-            border-collapse: collapse;
-            border-style: double;
-        }
-        th, td {
-            border: 0.5px solid;
-            padding: 3px 5px;
-        }
-        td.height {
-            font-weight: bold;
-        }
     </style>
 </head>
 
 <body>
-    <table>
-        <caption>
-            <b>原神圣遗物评分</b>
-        </caption>
-        <tr>
-            <th>词条</th>
-            <th>输入</th>
-            <th>权重</th>
-        </tr>
-        <tr>
-            <td>暴击</td>
-            <td>
-                <form><input type="number" id="0" required></form>
-            </td>
-            <td class="height">2</td>
-        </tr>
-        <tr>
-            <td>爆伤</td>
-            <td>
-                <form><input type="number" id="1" required></form>
-            </td>
-            <td class="height">1</td>
-        </tr>
-        <tr>
-            <td>充能</td>
-            <td>
-                <form><input type="number" id="2" required></form>
-            </td>
-            <td class="height">1.2</td>
-        </tr>
-        <tr>
-            <td>精通</td>
-            <td>
-                <form><input type="number" id="3" required></form>
-            </td>
-            <td class="height">0.33</td>
-        </tr>
-        <tr>
-            <td>大攻击</td>
-            <td>
-                <form><input type="number" id="4" required></form>
-            </td>
-            <td class="height">1.3</td>
-        </tr>
-        <tr>
-            <td>小攻击</td>
-            <td>
-                <form><input type="number" id="5" required></form>
-            </td>
-            <td class="height">0.2</td>
-        </tr>
-        <tr>
-            <td>大生命</td>
-            <td>
-                <form><input type="number" id="6" required></form>
-            </td>
-            <td class="height">1.3</td>
-        </tr>
-        <tr>
-            <td>小生命</td>
-            <td>
-                <form><input type="number" id="7" required></form>
-            </td>
-            <td class="height">0.013</td>
-        </tr>
-        <tr>
-            <td>大防御</td>
-            <td>
-                <form><input type="number" id="8" required></form>
-            </td>
-            <td class="height">1.1</td>
-        </tr>
-        <tr>
-            <td>小防御</td>
-            <td>
-                <form><input type="number" id="9" required></form>
-            </td>
-            <td class="height">0.17</td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <button type="button" onclick="handleInput()">计算最终得分</button>
-                <b id="result"></b>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <button type="button" onclick="clearInput()">清空</button>
-            </td>
-        </tr>
-    </table>
+    <button><a href="./原神圣遗物评分.html">原神圣遗物评分</a></button>
+    <ul>
+        <li><a href="./渲染md.html?param=硬盘无法弹出问题.md">硬盘无法弹出问题.md</a></li>
+        <li><a href="./渲染md.html?param=HTTP.md">HTTP.md</a></li>
+        <li><a href="./渲染md.html?param=HTML.md">HTML.md</a></li>
+        <li><a href="./渲染md.html?param=CSS.md">CSS.md</a></li>
+        <li><a href="javascript:void(0);" onclick="navigateWithParams('CSS selector.md')">CSS selector.md</a></li>
+        <li><a href="./渲染md.html?param=XPath.md">XPath.md</a></li>
+        <li><a href="javascript:void(0);" onclick="navigateWithParams('Js 混淆 & 编码 & 加密.md')">Js 混淆 & 编码 & 加密.md</a></li>
+        <li><a href="./渲染md.html?param=Linux 命令.md">Linux 命令.md</a></li>
+        <li><a href="./渲染md.html?param=Markdown.md">Markdown.md</a></li>
+        <li><a href="./渲染md.html?param=Regular expressions.md">Regular expressions.md</a></li>
+    </ul>
 
-    <script type="text/javascript">
-        function handleInput() {
-            //获取输入的值
-            let heightArray = [2, 1, 1.2, 0.33, 1.3, 0.2, 1.3, 0.013, 1.1, 0.17]
-            let numArray = new Array(10);
-            for (let index = 0; index < 10; index++) {
-                let num = document.getElementById(String(index)).value;
-                if (!isNaN(num) && num !=="") {
-                    numArray[index] = parseFloat(num) * heightArray[index];
-                }
-                else{
-                    numArray[index] = 0;
-                }
-            }
-            document.getElementById('result').innerText = numArray.reduce(
-                (acc, current) => acc + current, 0
-            ).toFixed(2)
-        }
-        function clearInput() {
-            //清空输入的值
-            let inputs = document.querySelectorAll('input[type="number"]');
-            inputs.forEach(input => {
-                input.value = '';
-            });
+    <script>
+        function navigateWithParams(param) {
+            const encodedParam = encodeURIComponent(param);  // 编码参数
+            const url = `./渲染md.html?param=${encodedParam}`;
+            window.location.href = url;  // 导航到目标页面
         }
     </script>
 </body>
 
 </html>
+
