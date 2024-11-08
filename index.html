@@ -32,7 +32,7 @@
         <li><a href="./渲染md.html?param=Computer/CSS.md">CSS.md</a></li>
         <li><a href="./渲染md.html?param=Computer/CSS selector.md">CSS selector.md</a></li>
         <li><a href="./渲染md.html?param=Computer/XPath.md">XPath.md</a></li>
-        <li><a href="javascript:void(0);" onclick="navigateWithParams('Computer/Js 混淆 & 编码 & 加密.md')">Js 混淆 & 编码 &
+        <li><a href="javascript:void(0);" onclick="navigateWithParamsMD('Computer/Js 混淆 & 编码 & 加密.md')">Js 混淆 & 编码 &
                 加密.md</a></li>
     </ul>
 
@@ -69,8 +69,8 @@
 
     <h3>date & time</h3>
     <ul>
-        <li><a href="./显示code.html?param=Python/date & time/M - time.py">M - time.py</a></li>
-        <li><a href="./显示code.html?param=Python/date & time/M - datetime.py">M - datetime.py</a></li>
+        <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/date & time/M - time.py')">M - time.py</a></li>
+        <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/date & time/M - datetime.py')">M - datetime.py</a></li>
     </ul>
 
     <h3>file</h3>
@@ -78,7 +78,7 @@
         <li><a href="./显示code.html?param=Python/file/_file.py">_file.py</a></li>
         <li><a href="./显示code.html?param=Python/file/M - csv.py">M - csv.py</a></li>
         <li><a href="./显示code.html?param=Python/file/M - json.py">M - json.py</a></li>
-        <li><a href="./显示code.html?param=Python/file/M - os & shutil.py">M - os & shutil.py</a></li>
+        <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/file/M - os & shutil.py')">M - os & shutil.py</a></li>
     </ul>
 
     <h3>html parse</h3>
@@ -103,7 +103,7 @@
 
     <h3>string</h3>
     <ul>
-        <li><a href="./显示code.html?param=Python/string/encode & encrypt.py">encode & encrypt.py</a></li>
+        <li><a href="javascript:void(0);" onclick="navigateWithParamsCode('Python/string/encode & encrypt.py')">encode & encrypt.py</a></li>
         <li><a href="./显示code.html?param=Python/string/M - re.py">M - re.py</a></li>
         <li><a href="./显示code.html?param=Python/string/M - string.py">M - string.py</a></li>
     </ul>
@@ -117,9 +117,14 @@
 
 
     <script>
-        function navigateWithParams(param) {
+        function navigateWithParamsMD(param) {
             const encodedParam = encodeURIComponent(param);  // 编码参数
             const url = `./渲染md.html?param=${encodedParam}`;
+            window.location.href = url;  // 导航到目标页面
+        }
+        function navigateWithParamsCode(param) {
+            const encodedParam = encodeURIComponent(param);  // 编码参数
+            const url = `./显示code.html?param=${encodedParam}`;
             window.location.href = url;  // 导航到目标页面
         }
     </script>
