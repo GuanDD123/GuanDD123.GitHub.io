@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,17 @@
             margin: 5%;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
 </head>
 
 <body>
-    <div id="content"></div>
+    <pre id="content"></pre>
     <script>
         // 接收参数并处理
         function handleParameter() {
             const param = getUrlParameter('param');
             if (param) {
                 // 使用传入的参数，执行所需操作
-                showMD(param);
+                showFile(param);
             } else {
                 alert("没有找到参数 'param'");
             }
@@ -31,20 +31,16 @@
             return decodeURIComponent(urlParams.get(name));
         }
 
-        // 加载 Markdown 文件并渲染
-        function showMD(url) {
-            const converter = new showdown.Converter({ simpleLineBreaks: true });
+        // 加载文件
+        function showFile(url) {
             fetch(url)
                 .then(response => response.text())
-                .then(markdownText => {
-                    // 使用 Showdown 转换 Markdown 为 HTML
-                    const html = converter.makeHtml(markdownText);
-                    document.getElementById("content").innerHTML = html;
+                .then(data => {
+                    document.getElementById("content").textContent = data;
                 })
-                .catch(error => console.error('Error loading Markdown file:', error));
+                .catch(error => console.error('文件加载错误:', error));
         }
     </script>
 </body>
 
 </html>
-
