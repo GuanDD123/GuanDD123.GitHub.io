@@ -39,20 +39,23 @@
             <th>词条</th>
             <th>输入</th>
             <th>权重</th>
+            <th>成长值</th>
         </tr>
         <tr>
             <td>暴击</td>
             <td>
                 <form><input type="number" id="0" required></form>
             </td>
-            <td class="height">2</td>
+            <td class="height">2.0</td>
+            <td>3.3</td>
         </tr>
         <tr>
             <td>爆伤</td>
             <td>
                 <form><input type="number" id="1" required></form>
             </td>
-            <td class="height">1</td>
+            <td class="height">1.0</td>
+            <td>6.6</td>
         </tr>
         <tr>
             <td>充能</td>
@@ -60,6 +63,7 @@
                 <form><input type="number" id="2" required></form>
             </td>
             <td class="height">1.2</td>
+            <td>5.5</td>
         </tr>
         <tr>
             <td>精通</td>
@@ -67,6 +71,7 @@
                 <form><input type="number" id="3" required></form>
             </td>
             <td class="height">0.33</td>
+            <td>20</td>
         </tr>
         <tr>
             <td>大攻击</td>
@@ -74,13 +79,15 @@
                 <form><input type="number" id="4" required></form>
             </td>
             <td class="height">1.3</td>
+            <td>5.0</td>
         </tr>
         <tr>
             <td>小攻击</td>
             <td>
                 <form><input type="number" id="5" required></form>
             </td>
-            <td class="height">0.2</td>
+            <td class="height">0.20</td>
+            <td>17</td>
         </tr>
         <tr>
             <td>大生命</td>
@@ -88,6 +95,7 @@
                 <form><input type="number" id="6" required></form>
             </td>
             <td class="height">1.3</td>
+            <td>5.0</td>
         </tr>
         <tr>
             <td>小生命</td>
@@ -95,6 +103,7 @@
                 <form><input type="number" id="7" required></form>
             </td>
             <td class="height">0.013</td>
+            <td>254</td>
         </tr>
         <tr>
             <td>大防御</td>
@@ -102,6 +111,7 @@
                 <form><input type="number" id="8" required></form>
             </td>
             <td class="height">1.1</td>
+            <td>6.2</td>
         </tr>
         <tr>
             <td>小防御</td>
@@ -109,15 +119,16 @@
                 <form><input type="number" id="9" required></form>
             </td>
             <td class="height">0.17</td>
+            <td>20</td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 <button type="button" onclick="handleInput()">计算最终得分</button>
                 <b id="result"></b>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 <button type="button" onclick="clearInput()">清空</button>
             </td>
         </tr>
