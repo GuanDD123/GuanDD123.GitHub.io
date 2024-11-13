@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            table {
+                width: 90%;
+            }
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+            border-collapse: collapse;
+            border-style: double;
+        }
+
+        th,
+        td {
+            border: 0.5px solid;
+            padding: 3px 5px;
+        }
+
+        td.height {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>
+            <b>原神圣遗物评分</b>
+        </caption>
+        <tr>
+            <th>词条</th>
+            <th>输入</th>
+            <th>权重</th>
+            <th>成长值</th>
+        </tr>
+        <tr>
+            <td>暴击</td>
+            <td>
+                <form><input type="number" id="0" required></form>
+            </td>
+            <td class="height">2</td>
+            <td>3.24</td>
+        </tr>
+        <tr>
+            <td>爆伤</td>
+            <td>
+                <form><input type="number" id="1" required></form>
+            </td>
+            <td class="height">1</td>
+            <td>6.48</td>
+        </tr>
+        <tr>
+            <td>速度</td>
+            <td>
+                <form><input type="number" id="2" required></form>
+            </td>
+            <td class="height">2.5</td>
+            <td>2.6</td>
+        </tr>
+        <tr>
+            <td>效果命中</td>
+            <td>
+                <form><input type="number" id="3" required></form>
+            </td>
+            <td class="height">1.5</td>
+            <td>4.32</td>
+        </tr>
+        <tr>
+            <td>效果抵抗</td>
+            <td>
+                <form><input type="number" id="4" required></form>
+            </td>
+            <td class="height">1.5</td>
+            <td>4.32</td>
+        </tr>
+        <tr>
+            <td>击破特攻</td>
+            <td>
+                <form><input type="number" id="5" required></form>
+            </td>
+            <td class="height">1</td>
+            <td>6.48</td>
+        </tr>
+        <tr>
+            <td>大攻击</td>
+            <td>
+                <form><input type="number" id="6" required></form>
+            </td>
+            <td class="height">1.5</td>
+            <td>4.32</td>
+        </tr>
+        <tr>
+            <td>小攻击</td>
+            <td>
+                <form><input type="number" id="7" required></form>
+            </td>
+            <td class="height">0.15</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>大生命</td>
+            <td>
+                <form><input type="number" id="8" required></form>
+            </td>
+            <td class="height">1.5</td>
+            <td>4.32</td>
+        </tr>
+        <tr>
+            <td>小生命</td>
+            <td>
+                <form><input type="number" id="9" required></form>
+            </td>
+            <td class="height">0.077</td>
+            <td>42</td>
+        </tr>
+        <tr>
+            <td>大防御</td>
+            <td>
+                <form><input type="number" id="10" required></form>
+            </td>
+            <td class="height">1.2</td>
+            <td>5.4</td>
+        </tr>
+        <tr>
+            <td>小防御</td>
+            <td>
+                <form><input type="number" id="11" required></form>
+            </td>
+            <td class="height">0.15</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button type="button" onclick="handleInput()">计算最终得分</button>
+                <b id="result"></b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <button type="button" onclick="clearInput()">清空</button>
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function handleInput() {
+            //获取输入的值
+            let heightArray = [2, 1, 2.5, 1.5, 1.5, 1, 1.5, 0.15, 1.5, 0.077, 1.2, 0.15]
+            let numArray = new Array(12);
+            for (let index = 0; index < 12; index++) {
+                let num = document.getElementById(String(index)).value;
+                if (!isNaN(num) && num !== "") {
+                    numArray[index] = parseFloat(num) * heightArray[index];
+                }
+                else {
+                    numArray[index] = 0;
+                }
+            }
+            document.getElementById('result').innerText = numArray.reduce(
+                (acc, current) => acc + current, 0
+            ).toFixed(2)
+        }
+        function clearInput() {
+            //清空输入的值
+            let inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        }
+    </script>
+</body>
+
+</html>
