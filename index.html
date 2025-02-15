@@ -40,7 +40,15 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button-group_child {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
@@ -95,11 +103,15 @@
         </div>
 
         <div class="button-group">
-            <button class="button"><a href="https://chatgpt.com/">ChatGPT</a></button>
-            <button class="button"><a href="https://chat.deepseek.com/">DeepSeek</a></button>
-            <button class="button"><a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></button>
-            <button class="button"><a
-                    href="https://mail.qq.com/cgi-bin/frame_html?sid=q2LYtEwmieggpwhu&r=ba6a64f0775154b0d588234087a833fa&lang=zh">QQmail</a></button>
+            <div class="button-group_child">
+                <button class="button"><a href="https://chatgpt.com/">ChatGPT</a></button>
+                <button class="button"><a href="https://chat.deepseek.com/">DeepSeek</a></button>
+            </div>
+            <div class="button-group_child">
+                <button class="button"><a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></button>
+                <button class="button"><a
+                        href="https://mail.qq.com/cgi-bin/frame_html?sid=q2LYtEwmieggpwhu&r=ba6a64f0775154b0d588234087a833fa&lang=zh">QQmail</a></button>
+            </div>
         </div>
     </div>
 </body>
