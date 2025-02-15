@@ -6,27 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style type="text/css">
+        * {
+            margin: 0; /* 去掉所有元素的默认外边距 */
+            padding: 0; /* 去掉所有元素的默认内边距 */
+            box-sizing: border-box; /* 确保内外边距计算一致 */
+        }
+
         body {
-            margin: 5%;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            background-image: url('wallpaper/bc13haet9350hio.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         a {
             text-decoration: none;
         }
 
+        .button {
+            padding: 50px; /* 给按钮容器添加内边距，留白 */
+        }
         button {
             font-size: larger;
             line-height: 2;
             margin: 1%;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        button:active {
+            transform: scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 
 <body>
     <div class="button">
-        <button><a href="./原神圣遗物评分.html">原神圣遗物评分</a></button><br/>
-        <button><a href="./星铁遗器评分.html">星铁遗器评分</a></button>
+        <button><a href="./原神圣遗物评分.html">原神圣遗物评分</a></button>
+        <button><a href="./星铁遗器评分.html">星铁遗器评分</a></button><br/>
+        <button><a href="https://chatgpt.com/"></a>ChatGPT</button>
     </div>
 </body>
 
