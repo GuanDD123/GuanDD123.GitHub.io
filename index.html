@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态网页</title>
 
     <style type="text/css">
         * {
-            margin: 0; /* 去掉所有元素的默认外边距 */
-            padding: 0; /* 去掉所有元素的默认内边距 */
-            box-sizing: border-box; /* 确保内外边距计算一致 */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             min-height: 100vh;
+            display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -21,44 +23,88 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            border-radius: 50px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            background-color: #ff7e5f;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .button:active {
+            transform: scale(1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         a {
             text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        .button {
-            padding: 50px; /* 给按钮容器添加内边距，留白 */
+        a:hover {
+            color: #ff7e5f;
+            transform: scale(1.1);
         }
-        button {
-            font-size: larger;
-            line-height: 2;
-            margin: 1%;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        button:active {
-            transform: scale(1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        a:active {
+            color: #feb47b;
         }
     </style>
 </head>
 
 <body>
-    <div class="button">
-        <button><a href="./原神圣遗物评分.html">原神圣遗物评分</a></button>
-        <button><a href="./星铁遗器评分.html">星铁遗器评分</a></button><br/>
-        <button><a href="https://chatgpt.com/"></a>ChatGPT</button>
+    <div class="button-container">
+        <div class="button-group">
+            <button class="button"><a href="./原神圣遗物评分.html">原神圣遗物评分</a></button>
+            <button class="button"><a href="./星铁遗器评分.html">星铁遗器评分</a></button>
+        </div>
+
+        <div class="button-group">
+            <button class="button"><a href="https://chatgpt.com/">ChatGPT</a></button>
+            <button class="button"><a href="https://chat.deepseek.com/">DeepSeek</a></button>
+            <button class="button"><a href="https://translate.google.com/?sl=auto&tl=en&op=translate">Google
+                    翻译</a></button>
+            <button class="button"><a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a></button>
+            <button class="button"><a
+                    href="https://mail.qq.com/cgi-bin/frame_html?sid=q2LYtEwmieggpwhu&r=ba6a64f0775154b0d588234087a833fa&lang=zh">QQmail</a></button>
+            <button class="button"><a
+                    href="https://feedly.com/i/collection/content/user/972e175e-4d2e-4c15-a383-a6f9fff60320/category/global.all">Feedly</a></button>
+            <button class="button"><a href="https://tophub.today/">今日热榜</a></button>
+        </div>
     </div>
 </body>
 
