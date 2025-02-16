@@ -19,12 +19,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('wallpaper/bc13haet9350hio.png');
+            font-family: Arial, sans-serif;
+            color: #fff;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            font-family: Arial, sans-serif;
-            color: #fff;
         }
 
         .button-container {
@@ -89,6 +88,39 @@
         a:active {
             color: #feb47b;
         }
+
+        .file-input-container {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .file-input {
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff7e5f;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .file-input:hover {
+            background-color: #feb47b;
+            transform: scale(1.05);
+        }
+
+        .file-input:active {
+            background-color: #ff7e5f;
+            transform: scale(1);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
     </style>
 </head>
 
@@ -114,6 +146,32 @@
             </div>
         </div>
     </div>
+
+    <div class="file-input-container">
+        <label for="fileInput" class="file-input">选择壁纸</label>
+        <input type="file" id="fileInput" accept="image/*" onchange="changeWallpaper(event)" />
+    </div>
+
+    <script>
+        window.onload = function () {
+            const savedWallpaper = localStorage.getItem("backgroundImage");
+            if (savedWallpaper) {
+                document.body.style.backgroundImage = `url(${savedWallpaper})`;
+            }
+        };
+
+        function changeWallpaper(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.body.style.backgroundImage = `url(${e.target.result})`;
+                    localStorage.setItem("backgroundImage", e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 
 </html>
