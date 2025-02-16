@@ -8,10 +8,12 @@ window.onload = function () {
         const getRequest = objectStore.get(1);
         getRequest.onsuccess = function () {
             const wallpaper = getRequest.result;
-            if (wallpaper && wallpaper.imageData) {
-                document.body.style.backgroundImage = `url(${wallpaper.imageData})`;
-            } else {
+
+            if (!wallpaper || !wallpaper.imageData) {
                 document.body.style.backgroundImage = "url('wallpaper/bc13haet9350hio.png')";
+                storeImageInIndexedDB("url('wallpaper/bc13haet9350hio.png')");
+            } else {
+                document.body.style.backgroundImage = `url(${wallpaper.imageData})`;
             }
         };
         getRequest.onerror = function () {
@@ -27,6 +29,7 @@ window.onload = function () {
 
 function storeImageInIndexedDB(dataUrl) {
     const request = indexedDB.open('wallpaperDB', 1);
+
     request.onupgradeneeded = function (event) {
         const db = event.target.result;
         const objectStore = db.createObjectStore('wallpapers', { keyPath: 'id' });
@@ -38,13 +41,19 @@ function storeImageInIndexedDB(dataUrl) {
         const transaction = db.transaction(['wallpapers'], 'readwrite');
         const objectStore = transaction.objectStore('wallpapers');
 
-        const wallpaper = { id: 1, imageData: dataUrl };
-        const addRequest = objectStore.add(wallpaper);
-        addRequest.onsuccess = function () {
-            console.log('图片已成功存储到 IndexedDB');
+        const deleteRequest = objectStore.delete(1);
+        deleteRequest.onsuccess = function () {
+            const wallpaper = { id: 1, imageData: dataUrl };
+            const addRequest = objectStore.add(wallpaper);
+            addRequest.onsuccess = function () {
+                console.log('壁纸已成功存储到 IndexedDB');
+            };
+            addRequest.onerror = function (event) {
+                console.error('存储到 IndexedDB 失败:', event.target.error);
+            };
         };
-        addRequest.onerror = function (event) {
-            console.error('存储到 IndexedDB 失败:', event.target.error);
+        deleteRequest.onerror = function () {
+            console.error('删除旧壁纸失败');
         };
     };
 
